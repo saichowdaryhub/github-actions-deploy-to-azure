@@ -51,7 +51,7 @@ jobs:
         uses: docker/login-action@v3
         with:
           registry: ${{ env.IMAGE_REGISTRY_URL }}
-          saichowdaryhub: ${{ github.actor }}
+          username: ${{ github.actor }}
           password: ${{ secrets.CR_PAT }}
 
       - name: Extract metadata (tags, labels) for Docker
@@ -83,7 +83,7 @@ jobs:
       - uses: azure/docker-login@v1
         with:
           login-server: ${{env.IMAGE_REGISTRY_URL}}
-          saichowdaryhub: ${{ github.actor }}
+          username: ${{ github.actor }}
           password: ${{ secrets.CR_PAT }}
 
       - name: Deploy web app container
